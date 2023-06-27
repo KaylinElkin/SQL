@@ -1,0 +1,26 @@
+-- Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+
+CREATE TABLE baby_store (id INTEGER PRIMARY KEY, item TEXT, total_instock INTEGER, price NUMeric, item_type TEXT);
+
+INSERT INTO baby_store VALUES (1, "socks", 10, 5.99, "clothing");
+INSERT INTO baby_store VALUES (2, "hat", 5, 12.99, "clothing");
+INSERT INTO baby_store VALUES (3, "walker", 2, 65.99, "toys");
+INSERT INTO baby_store VALUES (4, "train", 10, 29.50, "toys");
+INSERT INTO baby_store VALUES (5, "crib", 2, 200.00, "gear");
+INSERT INTO baby_store VALUES (6, "onsies", 12, 6.50, "clothing");
+INSERT INTO baby_store VALUES (7, "sneakers", 5, 10.99, "shoes");
+INSERT INTO baby_store VALUES (8, "sandles", 5, 10.99, "shoes");
+INSERT INTO baby_store VALUES (9, "pants", 7, 5.00, "clothing");
+INSERT INTO baby_store VALUES (10, "trash can", 3, 24.99, "gear");
+INSERT INTO baby_store VALUES (11, "bottle", 10, 3.99, "gear");
+INSERT INTO baby_store VALUES (12, "stroller", 1, 300.00, "gear");
+INSERT INTO baby_store VALUES (13, "diaper bag", 4, 20.00, "gear");
+INSERT INTO baby_store VALUES (14, "walker", 3, 24.99, "toys");
+INSERT INTO baby_store VALUES (15, "jacket", 5, 30.00, "clothing");
+
+SELECT * FROM baby_store;
+
+-- group the database by item type, then find the sum of the price for each item type and order by the sum 
+SELECT item_type, SUM(price) FROM baby_store GROUP BY item_type ORDER BY SUM(price) desc; 
+
+
